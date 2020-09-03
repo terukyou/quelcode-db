@@ -24,8 +24,8 @@ CREATE TABLE `chatrooms`(
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`),
-    FOREIGN KEY user_room_created_key(`created_by`) REFERENCES `users`(`id`),
-    FOREIGN KEY user_room_created_key(`updated_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
 
 CREATE TABLE `chat_participants`(
@@ -33,8 +33,8 @@ CREATE TABLE `chat_participants`(
     `user_id` INT(11) NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(`chatroom_id`, `user_id`),
-    FOREIGN KEY user_room_created_key(`chatroom_id`) REFERENCES `chatrooms`(`id`),
-    FOREIGN KEY user_room_created_key(`user_id`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE `chats`(
@@ -48,9 +48,9 @@ CREATE TABLE `chats`(
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(`id`),
-    FOREIGN KEY user_room_created_key(`chatroom_id`) REFERENCES `chatrooms`(`id`),
-    FOREIGN KEY user_room_created_key(`created_by`) REFERENCES `users`(`id`),
-    FOREIGN KEY user_room_created_key(`updated_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
 
 CREATE TABLE `tasks`(
@@ -66,9 +66,9 @@ CREATE TABLE `tasks`(
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(`id`),
-    FOREIGN KEY user_room_created_key(`chatroom_id`) REFERENCES `chatrooms`(`id`),
-    FOREIGN KEY user_room_created_key(`personnel`) REFERENCES `users`(`id`),
-    FOREIGN KEY user_room_created_key(`created_by`) REFERENCES `users`(`id`),
-    FOREIGN KEY user_room_created_key(`updated_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`chatroom_id`) REFERENCES `chatrooms`(`id`),
+    FOREIGN KEY (`personnel`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`created_by`) REFERENCES `users`(`id`),
+    FOREIGN KEY (`updated_by`) REFERENCES `users`(`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 AUTO_INCREMENT = 1;
 
