@@ -18,9 +18,9 @@ CREATE TABLE `chatrooms`(
     `overview` VARCHAR(1000) NULL,
     `is_file_sendable` TINYINT(1) NULL DEFAULT 1,
     `is_direct_chat` TINYINT(1) NULL DEFAULT 0,
+    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_by` INT(11) NOT NULL,
     `updated_by` INT(11) NOT NULL,
-    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
@@ -38,9 +38,9 @@ CREATE TABLE `chats`(
     `chatroom_id` INT(11) NOT NULL,
     `content` VARCHAR(1000) NOT NULL,
     `file` VARCHAR(100) NULL,
+    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_by` INT(11) NOT NULL,
     `updated_by` INT(11) NOT NULL,
-    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(`id`)
@@ -53,9 +53,9 @@ CREATE TABLE `tasks`(
     `personnel` INT(11) NOT NULL,
     `deadline` TIMESTAMP NULL,
     `is_finished` TINYINT(1) NULL,
+    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_by` INT(11) NOT NULL,
     `updated_by` INT(11) NOT NULL,
-    `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY(`id`)
