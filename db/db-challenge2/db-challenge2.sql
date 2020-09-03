@@ -4,8 +4,8 @@ CREATE TABLE `users`(
     `email` VARCHAR(100) NOT NULL,
     `password` VARCHAR(100) NOT NULL,
     `self_introduction` VARCHAR(1000) NULL,
-    `workphone` CHAR(13) NULL,
-    `mobile` CHAR(13) NULL,
+    `work_phone` CHAR(13) NULL,
+    `mobile_phone` CHAR(13) NULL,
     `is_deleted` TINYINT(1) NULL DEFAULT 0,
     `created_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
     `modified_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -29,7 +29,7 @@ CREATE TABLE `chatrooms`(
 CREATE TABLE `chat_participants`(
     `chatroom_id` INT(11) NOT NULL,
     `user_id` INT(11) NOT NULL,
-    `participation` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(`chatroom_id`, `user_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
