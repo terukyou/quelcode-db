@@ -12,3 +12,4 @@ VALUES
 ('php@labot.inc','php7','php','伝説のphp6',NULL,NULL,0,'2020/04/24 01:01:06','2020/04/24 01:01:06'),
 ('javascript@labot.inc','react','js','Helloworld','0120-555-458',NULL,0,'2020/04/24 05:03:58','2020/04/24 05:03:58'),
 ('microsoft@gmail.com','google','amazon','facebook',NULL,'080-9999-5555',1,'2020/04/24 06:00:02','2020/04/26 12:13:43')
+
