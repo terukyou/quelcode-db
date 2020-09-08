@@ -5,5 +5,5 @@ FROM chats,
 WHERE chats.chatroom_id = chatrooms.id
     AND chats.is_deleted <> 1
     AND chatrooms.is_deleted<>1
-GROUP BY chats.chatroom_id
+GROUP BY chatrooms.name
 ORDER BY COUNT(*) DESC;
