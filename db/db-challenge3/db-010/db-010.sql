@@ -15,6 +15,7 @@ FROM users,
                 WHERE chats.is_deleted <> 1
                 GROUP BY chats.chatroom_id
             ) AS max ON chats_latest = A.modified_at
+            AND max.chatroom_id = A.chatroom_id
     ) AS m
 WHERE room_id = chatrooms.id
     AND user_id = users.id
