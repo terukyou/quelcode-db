@@ -3,7 +3,7 @@ SELECT COUNT(chats.chatroom_id) AS '投稿数',
 FROM chats,
     chatrooms,
     users
-    WHERE chats.chatroom_id = chatrooms.id
+WHERE chats.chatroom_id = chatrooms.id
     AND chats.updated_by = users.id
     AND chats.is_deleted <> 1
     AND users.is_deleted <> 1
