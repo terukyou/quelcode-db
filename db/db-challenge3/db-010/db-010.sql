@@ -19,4 +19,4 @@ FROM users,
 WHERE room_id = chatrooms.id
     AND user_id = users.id
     AND users.is_deleted <> 1
-    AND chatrooms.is_deleted <> 1
+ORDER BY chatrooms.id;
